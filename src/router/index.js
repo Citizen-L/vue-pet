@@ -139,62 +139,7 @@ const routes = [
       },
     ],
   },
-  {
-    path: "/backstage",
-    component: () => import("pages/backstage/backstage.vue"),
-    meta: {
-      title: "后台管理",
-    },
-    children: [
-      {
-        path: "",
-        redirect: "mymanage",
-      },
-      {
-        path: "mymanage",
-        component: () => import("pages/backstage/mymanage/mymanage.vue"),
-        meta: {
-          title: "个人管理",
-        },
-      },
-      {
-        path: "usermanage",
-        component: () => import("pages/backstage/usermanage/usermanage.vue"),
-        meta: {
-          title: "用户管理",
-        },
-      },
-      {
-        path: "addressmanage",
-        component: () => import("pages/backstage/usermanage/addressmanage.vue"),
-        meta: {
-          title: "地址管理",
-        },
-      },
-      {
-        path: "petmanage",
-        component: () => import("pages/backstage/petmanage/petmanage.vue"),
-        meta: {
-          title: "宠物管理",
-        },
-      },
-      {
-        path: "petkindmanage",
-        component: () => import("pages/backstage/petmanage/petkindmanage.vue"),
-        meta: {
-          title: "宠物种类管理",
-        },
-      },
-      {
-        path: "petordermanage",
-        component: () =>
-          import("pages/backstage/petordermanage/petordermanage.vue"),
-        meta: {
-          title: "订单管理",
-        },
-      },
-    ],
-  },
+
 ];
 
 
