@@ -36,9 +36,6 @@
                 </el-option>
             </el-select>
 
-
-
-
             <div class="title">宠物年龄</div>
             <el-select v-model="form.age" clearable filterable placeholder="请选择宠物年龄">
                 <el-option
@@ -48,8 +45,6 @@
                     :value="item.age">
                 </el-option>
             </el-select>
-
-
 
             <div class="title">宠物价格</div>
             <el-slider :max="maxprice" v-model="form.maxprice"></el-slider>
@@ -103,7 +98,7 @@ import { requestqueryBKindandSKind,requestqueryallskind,requestqueryMaxPrice,req
                 }
             }
         },
-        created(){      //这里是本项目目前最难理解的
+        created(){      
 
         /*
         我使用 map() 方法将查询到的所有宠物类型数据的 bkid、bkindname 和 skid 字段提取出来，并将结果保存到 this.bkind 数组中。然后，我使用 filter() 方法和 findIndex() 方法来去除重复的宠物类型。具体来说，filter() 方法用于过滤数组中的元素，findIndex() 方法用于查找数组中第一个满足条件的元素，并返回其索引。在这里，我通过比较当前元素的 bkindname 字段在数组中第一次出现的索引和当前元素的索引来去除重复的宠物类型。
