@@ -1,0 +1,13 @@
+
+*,
+button {
+    border: none;
+    outline: none;
+    cursor:pointer;
+}
+
+input,
+button {
+    border: 0;
+    outline: none;
+}

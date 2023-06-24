@@ -1,0 +1,27 @@
+<!--宠物列表-->
+<template>
+    <div class="carditem">
+        <card v-for="(item,index) in lists" :key="index" :item="item"></card>        <!--这里的item是selector传过来的-->  
+    </div>
+</template>
+
+<script>
+import Card from "@/components/common/carditem/Card.vue"
+
+export default {
+   name:'Carditem',
+   props:['lists'],
+   components:{Card},
+   data() {
+       return {}
+   },
+}
+</script>
+<style scoped>
+.carditem {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+</style>
