@@ -61,7 +61,7 @@
 
 <script>
 import Breadcrumb from "@/components/common/breadcrumb/Breadcrumb.vue"
-import bus from "@/store/bus.js"
+
 import { requestqueryBKindandSKind,requestqueryallskind,requestaddpet, requestupdatePet} from "@/api/index.js"
 
 export default {
