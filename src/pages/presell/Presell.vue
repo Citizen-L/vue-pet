@@ -12,12 +12,6 @@
                     <Carditem :lists="lists"></Carditem>
                 </div>
             </div>
-            <!-- 分页按钮 -->
-            <!-- <div class="paging">
-                <el-pagination @current-change="newpetpage" background :hide-on-single-page="true" :pager-count="pagercount"
-                    :page-size="pagesize" layout="prev, pager, next, jumper">
-                </el-pagination>
-            </div> -->
         </div>
     </div>
 </template>
