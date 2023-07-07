@@ -14,7 +14,7 @@
 
 <script>
     import {requestqueryuser,requestupdateuser} from '@/api/user.js'
-
+    import { validatePhone } from "@/utils/utils.js";
     export default {
         name: 'ChangePhone',
         data () {
@@ -35,7 +35,7 @@
                         type: "error",
                         showClose: true
                     })
-                } else if (/^1\d{10}$/.test(this.phone)) {
+                } else if (validatePhone(this.phone)){
                     this.flag = true
                 } else {
                     this.$message({

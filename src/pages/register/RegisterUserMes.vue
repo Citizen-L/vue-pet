@@ -22,10 +22,10 @@
             </div>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
+import { checkIdCard } from '@/utils/utils.js'
 import { requestcheckrealname } from "@/api/log_reg"
 export default {
     name: 'RegisterUserMes',
@@ -59,11 +59,7 @@ export default {
             if (this.form.idcard === "") {
                 this.check.idcard.val = "身份证号不能为空"
                 this.check.idcard.flag = true
-            } else if (
-                /^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/.test(
-                this.form.idcard
-                )
-            ) {
+            } else if (checkIdCard(this.form.idcard)) {
                 this.check.idcard.flag = false
             } else {
                 this.check.idcard.val = "*请正确输入18位身份证号"

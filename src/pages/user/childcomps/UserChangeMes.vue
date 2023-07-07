@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { validatePhone,validateUsername } from "@/utils/utils.js"
 import {requestqueryuser,requestupdateuser} from '@/api/user.js'
 export default {
     name:'UserChangeMes',
@@ -51,7 +52,7 @@ export default {
         var checkusername = (rule, value, callback) => {
             if (!value) {
                 return callback(new Error('用户名不能为空'));
-            }else if (/^[A-Za-z0-9_\u4e00-\u9fa5]{2,16}$/.test(value)) {
+            }else if (validateUsername(value)) {
                 callback();
             }else {
                 return callback(new Error('用户名只能是2到16位的字母,数字和中文'))
@@ -61,7 +62,7 @@ export default {
         var checktelphone = (rule, value, callback) => {
             if (value === ''){
                 return callback(new Error('手机号不能为空'));
-            }else if (/^1\d{10}$/.test(value)){
+            }else if (validatePhone(this.form.telphone)){
                 callback()
             }else {
                 return callback(new Error('请输入11位手机号码，1xx xxxx xxxx'))

@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import { validatePhone } from "@/utils/utils.js";
 import { requestcheckuser } from "@/api/log_reg";
 export default {
     name: 'RegisterUser',
@@ -117,7 +118,7 @@ export default {
             if(this.form.telphone === ''){
                 this.check.telphone.val = '手机号不能为空'
                 this.check.telphone.flag = true
-            } else if (/^1\d{10}$/.test(this.form.telphone)) {
+            } else if (validatePhone(this.form.telphone)) {
                 this.check.telphone.flag = false
             } else {
                 this.check.telphone.val = "*请输入11位手机号码，1xx xxxx xxxx"
